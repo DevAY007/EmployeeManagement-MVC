@@ -1,0 +1,26 @@
+﻿@using FirstMVCProject.Dto.Company;
+@using FirstMVCProject.Migrations;
+@model CompanyRegistrationDto;
+@{
+    ViewData["Title"] = "Company Details";
+}
+
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header">
+            @Model.CompanyName
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Model.CompanyName</h5>
+            <p class="card-text">CompanyName:     @Model.CompanyName</p>
+            <p class="card-text">Email:  @Model.CompanyEmail</p>
+            <p class="card-text">About:      @Model.About</p>
+
+            <a asp-controller="CompanyReg" asp-action="UpdateCompany"
+               asp-route-id="@Model.CompanyId" class="btn btn-primary">Edit</a>
+
+            @*<a asp-controller="CompanyReg" asp-action="Back"
+            asp-route-id="@Model.Id" class="btn btn-primary">Back></a>*@
+        </div>
+    </div>
+</div>

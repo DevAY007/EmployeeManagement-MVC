@@ -1,0 +1,61 @@
+﻿@using FirstMVCProject.Dto.Employees;
+@using System.ComponentModel.Design
+@model IEnumerable<FirstMVCProject.Dto.Employees.EmployeeDto>;
+@{
+    ViewData["Title"] = "Employee";
+    var i = 0;
+    var EmployeeCount = Model.Count();
+    var CompanyId = ViewBag.CompanyId;
+}
+
+<div class="col-md-10">
+    <h2 class="mb-4">Employees Count <span class="badge bg-black">@EmployeeCount</span></h2>
+
+     @if (EmployeeCount > 0)
+    {
+        var firstItem = Model.First();
+        <a href="@Url.Action("AddEmployee", "Employee", new { CompanyId = firstItem.CompanyId })" class="btn btn-secondary">Add Employee</a>
+    }
+    else
+    {
+        <a href="@Url.Action("AddEmployee", "Employee", new { CompanyId = CompanyId})" class="btn btn-secondary">Add Employee</a>
+    }
+    <table class="table table-responsive mt-3">
+        <thead>
+            <tr>
+                <th scope="col">S/N</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (EmployeeCount > 0)
+            {
+                foreach (var item in Model)
+                {
+                    i++;
+                    <tr>
+                        <th scope="row">@i</th>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Gender</td>
+                        <td>
+                            <a asp-controller="Employee" asp-action="EmployeeDetails" asp-route-id="@item.Id" class="btn btn-primary">Employee Detail</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Employee" asp-action="DeleteEmployee" asp-route-id="@item.Id" method ="get" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">No Record Found</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

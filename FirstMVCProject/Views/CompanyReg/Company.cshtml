@@ -1,0 +1,63 @@
+﻿@using FirstMVCProject.Dto.Company;
+@using FirstMVCProject.Migrations;
+@model IEnumerable<CompanyRegistrationDto>;
+@{
+	ViewData["Title"] = "Company";
+	var i = 0;
+    var CompanyCount = Model.Count();
+}
+<a href="@Url.Action("CreateCompany","CompanyReg")" class="btn btn-primary">Add Company</a>
+<br />
+<div class="col-md-10"> 
+	<h2 class="	mb-4">Avaliable Companies <span class=" badge bg-black">@CompanyCount</span></h2>
+	<table class="table table-responsive"> 
+		<thead>
+			<tr>
+				<th scope="col">S/N</th>
+				<th scope="col">CompanyName</th> 
+				<th scope="col">CompanyEmail</th>
+				<th scope="col">About</th>
+				<th scope="col">Action</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@if (Model.Count() > 0)
+			{
+				@foreach (var item in Model)
+				{
+					i++;
+					<tr>
+						<th scope="row">@i</th>
+						<td>@item.CompanyName</td>
+						<td>@item.CompanyEmail</td>
+						<td>@item.About</td>
+
+						<td>
+							<a asp-controller="CompanyReg" asp-action="CompanyDetails"
+							   asp-route-id="@item.CompanyId" class="btn btn-primary">Company Detail</a>
+						</td>
+
+						<td>
+							<a asp-controller="CompanyReg" asp-action="DeleteCompany"
+							   asp-route-id="@item.CompanyId" class="btn btn-danger">Delete</a>
+						</td>
+
+						<td>
+							<a asp-controller="Employee" asp-action="Employee"
+							   asp-route-CompanyId="@item.CompanyId" class="btn btn-primary">Employee</a>
+						</td>
+					</tr>
+				}
+
+			}
+			else
+			{
+				<tr>
+					No Record Found
+				</tr>
+			}
+
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,37 @@
+﻿@using FirstMVCProject.Dto.EducationHistory
+@model AddEducationHistory
+@{
+	ViewData["Title"] = "AddEducationInfo";
+}
+
+<div class="col-md-8">
+
+	<form asp-action="AddEducationInfo" asp-controller="EducationInfo">
+
+		<div class="mb-3">
+			<label class="form-label">PrimarySchoolAttended</label>
+			<input type="text" class="form-control" name="PrimarySchoolAttended" placeholder="PrimarySchoolAttended" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">SecondarySchoolAttended</label>
+			<input type="text" class="form-control" name="SecondarySchoolAttended" placeholder="SecondarySchoolAttended" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">InstitutionAttended</label>
+			<input type="text" class="form-control" name="InstitutionAttended" placeholder="InstitutionAttended" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Qualifications</label>
+			<input type="text" class="form-control" name="Qualifications" placeholder="Qualifications" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">DateGraduated</label>
+			<input type="date" class="form-control" name="DateGraduated" placeholder="DateGraduated" required>
+		</div>
+		<div class="row">
+			<button type="submit" class="btn btn-success">Next</button>
+		</div>
+
+	</form>
+
+</div>

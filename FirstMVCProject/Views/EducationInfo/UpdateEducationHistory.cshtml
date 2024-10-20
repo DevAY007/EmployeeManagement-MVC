@@ -1,0 +1,38 @@
+﻿@{
+	ViewData["Title"] = "Update History";
+	var id = Context?.GetRouteValue("Id");
+}
+
+
+<div class="col-md-8">
+
+
+	<form asp-controller="EducationInfo" asp-action="UpdateHistory" asp-route-id="@id">
+
+		<div class="mb-3">
+			<label class="form-label">PrimarySchoolAttended</label>
+			<input type="text" class="form-control" name="FirstName" placeholder="PrimarySchoolAttended" required value="@Model.PrimarySchoolAttended">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">SecondarySchoolAttended</label>
+			<input type="text" class="form-control" name="SecondarySchoolAttended" placeholder="SecondarySchoolAttended" required value="@Model.SecondarySchoolAttended">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">InstitutionAttended</label>
+			<input type="text" class="form-control" name="InstitutionAttended" placeholder="InstitutionAttended" required value="@Model.InstitutionAttended">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Qualification</label>
+			<input type="text" class="form-control" name="Qualification" placeholder="Qualification" required value="@Model.Qualification">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">DateGraduated</label>
+			<input type="text" class="form-control" name="DateGraduated" placeholder="DateGraduated" required value="@Model.DateGraduated">
+		</div>
+		<td>
+			<a asp-controller="EducationInfo" asp-action="EducationHistoryDetails" class="btn btn-primary">Education History Details</a>
+		</td>
+
+	</form>
+
+</div>

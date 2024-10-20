@@ -1,0 +1,38 @@
+﻿@{
+	ViewData["Title"] = "Update Record";
+	var id = Context?.GetRouteValue("Id");
+}
+
+
+<div class="col-md-8">
+
+
+	<form asp-controller="NextOfKin" asp-action="UpdateRecord" asp-route-id="@id">
+
+		<div class="mb-3">
+			<label class="form-label">FullName</label>
+			<input type="text" class="form-control" name="FullName" placeholder="FullName" required value="@Model.FullName">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Gender</label>
+			<input type="text" class="form-control" name="Gender" placeholder="Gender" required value="@Model.Gender">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">PhoneNumber</label>
+			<input type="text" class="form-control" name="PhoneNumber" placeholder="PhoneNumber" required value="@Model.PhoneNumber">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Gmail</label>
+			<input type="text" class="form-control" name="Gmail" placeholder="Gmail" required value="@Model.Gmail">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">HomeAddress</label>
+			<input type="text" class="form-control" name="HomeAddress" placeholder="HomeAddress" required value="@Model.HomeAddress">
+		</div>
+		<div class="row">
+			<button type="submit" class="btn btn-success">Update</button>
+		</div>
+
+	</form>
+
+</div>

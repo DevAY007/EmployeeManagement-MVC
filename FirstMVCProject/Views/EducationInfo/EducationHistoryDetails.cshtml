@@ -1,0 +1,25 @@
+﻿@using FirstMVCProject.Dto.EducationHistory
+@using FirstMVCProject.Migrations;
+@model EducationHistoryDto;
+@{
+    ViewData["Title"] = "EducationHistoryDetails";
+}
+
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text">PrimarySchoolAttended:     @Model.PrimarySchoolAttended</p>
+            <p class="card-text">SecondarySchoolAttended:      @Model.SecondarySchoolAttended</p>
+            <p class="card-text">InstitutionAttended:      @Model.InstitutionAttended</p>
+            <p class="card-text">Qualification:     @Model.Qualification</p>
+            <p class="card-text">DateGraduated:  @Model.DateGraduated</p>
+            
+
+            <a asp-controller="EducationInfo" asp-action="UpdateHistory"
+               asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+
+            <a asp-controller="NextOfKin" asp-action="NextOfKinDetails"
+               asp-route-id="@Model.Id" class="btn btn-primary">More Details</a>
+        </div>
+    </div>
+</div>

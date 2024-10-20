@@ -1,0 +1,42 @@
+﻿@{
+	ViewData["Title"] = "Update Record";
+	var id = Context?.GetRouteValue("Id");
+}
+
+
+<div class="col-md-8">
+
+
+	<form asp-controller="HealthStatus" asp-action="UpdateHealthStatus" asp-route-id="@id">
+
+		<div class="mb-3">
+			<label class="form-label">BloodGroup</label>
+			<input type="text" class="form-control" name="BloodGroup" placeholder="BloodGroup" required value="@Model.BloodGroup">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">BloodType</label>
+			<input type="text" class="form-control" name="BloodType" placeholder="BloodType" required value="@Model.BloodType">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Allergies</label>
+			<input type="text" class="form-control" name="Allergies" placeholder="Allergies" required value="@Model.Allergies">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">HealthStatus</label>
+			<input type="text" class="form-control" name="HealthStatus" placeholder="HealthStatus" required value="@Model.HealthStatus">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Precautions</label>
+			<input type="text" class="form-control" name="Precautions" placeholder="Precautions" required value="@Model.Precautions">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Comment</label>
+			<input type="text" class="form-control" name="Comment" placeholder="Comment" required value="@Model.Comment">
+		</div>
+		<div class="row">
+			<button type="submit" class="btn btn-success">Update</button>
+		</div>
+
+	</form>
+
+</div>

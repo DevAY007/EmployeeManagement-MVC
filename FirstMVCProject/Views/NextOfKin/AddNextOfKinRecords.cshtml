@@ -1,0 +1,35 @@
+﻿@model FirstMVCProject.Dto.NextOfKin.AddNextOfKinDto
+@{
+	ViewData["Title"] = "AddNextOfKinRecord";
+}
+
+<div class="col-md-8">
+
+	<form asp-action="AddEmployee" asp-controller="Employee">
+
+		<div class="mb-3">
+			<label class="form-label">FullName</label>
+			<input type="text" class="form-control" name="FullName" placeholder="FullName" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Gender</label>
+			<input type="text" class="form-control" name="Gender" placeholder="Gender" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">PhoneNumber</label>
+			<input type="date" class="form-control" name="PhoneNumber" placeholder="PhoneNumber" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Gmail</label>
+			<input type="text" class="form-control" name="Gmail" placeholder="Gmail" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">HomeAddress</label>
+			<input type="email" class="form-control" name="HomeAddress" placeholder="HomeAddress" required>
+		<div class="row">
+			<button type="submit" class="btn btn-success">Next</button>
+		</div>
+
+	</form>
+
+</div>

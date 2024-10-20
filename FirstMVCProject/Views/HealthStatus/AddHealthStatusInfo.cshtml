@@ -1,0 +1,40 @@
+﻿@model FirstMVCProject.Dto.HealthStatus.AddHealthStatusDto
+@{
+	ViewData["Title"] = "AddHealthStatus";
+}
+
+<div class="col-md-8">
+
+	<form asp-action="AddHealthInfo" asp-controller="HealthStatus">
+
+		<div class="mb-3">
+			<label class="form-label">BloodGroup</label>
+			<input type="text" class="form-control" name="BloodGroup" placeholder="BloodGroup" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">BloodType</label>
+			<input type="text" class="form-control" name="BloodType" placeholder="BloodType" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Allergies</label>
+			<input type="date" class="form-control" name="Allergies" placeholder="Allergies" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">HealthStatus</label>
+			<input type="text" class="form-control" name="HealthStatus" placeholder="HealthStatus" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Precautions</label>
+			<input type="email" class="form-control" name="Precautions" placeholder="Precautions" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Comment</label>
+			<input type="email" class="form-control" name="Comment" placeholder="Comment" required>
+		</div>
+			<div class="row">
+				<button type="submit" class="btn btn-success">Create</button>
+			</div>
+
+	</form>
+
+</div>

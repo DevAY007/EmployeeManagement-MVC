@@ -1,0 +1,30 @@
+﻿@using FirstMVCProject.Dto.Employees;
+@using FirstMVCProject.Migrations;
+@model EmployeeDto;
+@{
+    ViewData["Title"] = "EmployeeDetails";
+}
+
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header">
+            @Model.FirstName
+        </div>
+        <div class="card-body">
+            <p class="card-text">FirstName:     @Model.FirstName</p>
+            <p class="card-text">LastName:  @Model.LastName</p>
+            <p class="card-text">DOB:      @Model.DOB</p>
+            <p class="card-text">Gender:      @Model.Gender</p>
+            <p class="card-text">Email:     @Model.Email</p>
+            <p class="card-text">PhoneNumber:  @Model.PhoneNumber</p>
+            <p class="card-text">HomeAddress:      @Model.HomeAddress</p>
+            <p class="card-text">MaritalStatus:      @Model.MaritalStatus</p>
+
+            <a asp-controller="Employee" asp-action="UpdateEmployee"
+               asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+
+           @*  <a asp-controller="EducationInfo" asp-action="EduInfoDetailsAsync"
+               asp-route-id="@Model.Id" class="btn btn-primary">More Details</a> *@
+        </div>
+    </div>
+</div>

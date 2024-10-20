@@ -1,0 +1,63 @@
+﻿@model FirstMVCProject.Dto.Employees.AddEmployeeDto
+@{
+    ViewData["Title"] = "AddEmployee";
+    var CompanyId = Context.GetRouteValue("companyId");
+}
+
+<div class="col-md-8">
+    <form asp-controller ="Employee" asp-action="AddEmployee" asp-route-companyId="@CompanyId">
+        <input type="hidden" name="CompanyId" value="@CompanyId" />
+       
+        <div class="mb-3">
+            <label class="form-label" asp-for="FirstName"></label>
+            <input type="text" class="form-control" asp-for="FirstName" placeholder="First Name" required />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="LastName"></label>
+            <input type="text" class="form-control" asp-for="LastName" placeholder="Last Name" required />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="DOB"></label>
+            <input type="date" class="form-control" asp-for="DOB" required />
+            <span asp-validation-for="DOB" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="Gender"></label>
+            <input type="text" class="form-control" asp-for="Gender" placeholder="Gender" required />
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="Email"></label>
+            <input type="email" class="form-control" asp-for="Email" placeholder="Email" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="PhoneNumber"></label>
+            <input type="tel" class="form-control" asp-for="PhoneNumber" placeholder="Phone Number" required />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="HomeAddress"></label>
+            <input type="text" class="form-control" asp-for="HomeAddress" placeholder="Home Address" required />
+            <span asp-validation-for="HomeAddress" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="MaritalStatus"></label>
+            <input type="text" class="form-control" asp-for="MaritalStatus" placeholder="Marital Status" />
+            <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-success">Create</button>
+        </div>
+    </form>
+</div>

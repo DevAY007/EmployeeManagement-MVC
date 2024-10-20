@@ -1,0 +1,25 @@
+﻿@using FirstMVCProject.Dto.NextOfKin;
+@using FirstMVCProject.Migrations;
+@model NextOfKinDto;
+@{
+    ViewData["Title"] = "NextOfKinDetails";
+}
+
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text">FullName:     @Model.FullName</p>
+            <p class="card-text">Gender:      @Model.Gender</p>
+            <p class="card-text">PhoneNumber:      @Model.PhoneNumber</p>
+            <p class="card-text">Gmail:     @Model.Gmail</p>
+            <p class="card-text">HomeAddress:  @Model.HomeAddress</p>
+
+
+            <a asp-controller="NextOfKin" asp-action="UpdateRecord"
+               asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+
+            <a asp-controller="HealthStatus" asp-action="HealthDetailsAsync"
+               asp-route-id="@Model.Id" class="btn btn-primary">More Details</a>
+        </div>
+    </div>
+</div>

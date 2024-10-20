@@ -1,0 +1,28 @@
+﻿@model FirstMVCProject.Dto.Company.CreateCompanyDto
+@{
+	ViewData["Title"] = "CreateCompany";
+}
+
+<div class="col-md-8">
+
+	<form asp-action="CreateCompany" asp-controller="CompanyReg">
+
+		<div class="mb-3">
+			<label class="form-label">CompanyName</label>
+			<input type="text" class="form-control" name="CompanyName" placeholder="CompanyName" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">CompanyEmail</label>
+			<input type="email" class="form-control" name="CompanyEmail" placeholder="CompanyEmail" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">About</label>
+			<input type="text" class="form-control" name="About" placeholder="About">
+		</div>
+		<div class="row">
+			<button type="submit" class="btn btn-success">Create</button>
+		</div>
+
+	</form>
+
+</div>
